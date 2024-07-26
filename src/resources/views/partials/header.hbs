@@ -1,0 +1,42 @@
+<div class="container">
+  <header
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <div class="col-md-3 mb-2 mb-md-0 col-6">
+      <a href="/" style="text-decoration: none;"><span class="fs-4 fw-bold text-dark">Notes</span></a>
+    </div>
+
+    {{!-- <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="/" class="nav-link px-2">Home</a></li>
+      <li><a href="#" class="nav-link px-2">Features</a></li>
+      <li><a href="#" class="nav-link px-2">Pricing</a></li>
+      <li><a href="#" class="nav-link px-2">FAQs</a></li>
+      <li><a href="#" class="nav-link px-2">About</a></li>
+    </ul> --}}
+
+    <div class="col-md-3 col-6 text-end">
+      {{#if user}}
+      <div class="dropdown">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle"
+            viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+            <path fill-rule="evenodd"
+              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+          </svg>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Hello {{user.account}}!</a></li>
+          <hr>
+          <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        </ul>
+      </div>
+      {{else}}
+      <a href="/login" type="button" class="btn btn-outline-primary me-2 rounded-4">Login</a>
+      <a href="/sign_up" type="button" class="btn btn-primary rounded-4">Sign-up</a>
+      {{/if}}
+
+    </div>
+
+  </header>
+</div>

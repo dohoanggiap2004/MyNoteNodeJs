@@ -1,0 +1,19 @@
+@media (max-width: 600px) {
+    #delete{
+
+    }
+}
+
+/* Media query cho màn hình lớn hơn 600px và nhỏ hơn hoặc bằng 1200px */
+@media (min-width: 601px) and (max-width: 1200px) {
+    #delete{
+        margin-right: 60px;
+    }
+}
+
+/* Media query cho màn hình lớn hơn 1200px */
+@media (min-width: 1201px) {
+    #delete{
+        margin-right: 190px;
+    }
+}

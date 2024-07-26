@@ -1,0 +1,37 @@
+  <main class="form-signin m-auto col-lg-6 col-sm-4 col-md-6">
+    <form class="form-control" id="signupForm" action="/sign_up/user" method="post" style="margin-top: 130px;">
+      <h1 class="h3 mb-3 fw-normal text-center">Please sign up</h1>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="account" id="floatingInput" placeholder="">
+        <label for="floatingInput">Account</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="password1" id="password1" placeholder="Password">
+        <label for="floatingPassword">Password</label>
+      </div>
+
+        <div class="form-floating mb-3">
+        <input type="password" class="form-control" name="password2" id="password2" placeholder="Password">
+        <label for="floatingPassword">Re-enter Password</label>
+      </div>
+
+      <button class="btn btn-primary w-100 py-2" type="submit">Sign up</button>
+      <p class="text-danger" id="error"></p>
+      <p class="mt-5 mb-3 text-body-secondary text-center">© 2017–2024</p>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', function(event) {
+      var p1 = document.getElementById('password1').value;
+      var p2 = document.getElementById('password2').value;
+      var error = document.getElementById('error');
+
+      if (p1 !== p2) {
+        error.textContent = 'Passwords do not match';
+        event.preventDefault(); // Ngăn chặn form submit
+      } else {
+        error.textContent = ''; // Xóa thông báo lỗi nếu mật khẩu khớp
+      }
+    });
+  </script>

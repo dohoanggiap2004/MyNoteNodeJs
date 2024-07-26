@@ -1,0 +1,31 @@
+<div class="d-flex align-items-center justify-content-end mb-4">
+    <a href="/dashboard/{{user._id}}/create" class="btn btn-warning">New notes</a>
+</div>
+{{#if notes}}
+<div class="row g-4">
+    {{#each notes}}
+    <div class="col-12 col-md-6 col-lg-4">
+        <a href="/dashboard/{{this._id}}" style="text-decoration: none;">
+            <div class="card border-dark h-100">
+                <div class="card-header bg-transparent fw-semibold fs-3">{{this.title}}</div>
+                <div class="card-body">
+                    <p class="card-text" style="display: -webkit-box;
+                       -webkit-line-clamp: 7;
+                       -webkit-box-orient: vertical;
+                       overflow: hidden; text-align:justify">{{this.body}}</p>
+                </div>
+                <div class="card-footer bg-transparent">{{formatDate this.createdAt}}</div>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+    <div class="row py-md-5 text-center justify-content-center">
+     <div class="col-md-12 col-lg-6 mb-6 mb-md-0">
+                <h1 class="display-2 fw-bold ,b-4 position-relative" style="color: #FF8C00">
+                    If you haven't already, write a note right away.
+                </h1>
+     </div>
+     </div>
+{{/if}}

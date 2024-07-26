@@ -1,0 +1,22 @@
+<div class="container-fluid container-fluid-custom py-md-5 mb-5">
+    <main>
+        <div class="row py-md-5 text-center justify-content-center">
+
+            <div class="col-md-12 col-lg-6 mb-6 mb-md-0">
+                <h1 class="display-2 fw-bold ,b-4 position-relative">
+                    As ideas occur to you, jot them down.
+                </h1>
+                <p class="fs-4 mb-4">
+                    Notes is a free, easy-to-use note-taking application.
+                </p>
+                 {{#if user}}
+                <a href="/dashboard" class="btn btn-primary btn-lg rounded-5">Go to your notes</a>
+                {{else}}
+                <a href="/sign_up" class="btn btn-primary btn-lg rounded-5">Trying now, it's free</a>
+                {{/if}}
+            </div>
+
+        </div>
+    </main>
+
+</div>

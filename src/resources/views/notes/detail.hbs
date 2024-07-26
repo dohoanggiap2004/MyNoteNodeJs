@@ -1,0 +1,53 @@
+<form action="/dashboard/{{note._id}}/update?_method=PUT" method="post" class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 col-12 mx-auto">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" id="formGroupExampleInput" placeholder=""
+                    value="{{note.title}}">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Content</label>
+                <textarea class="form-control" name="body" id="formGroupExampleInput" style="height: 400px;"
+                    placeholder="Enter your note here...">{{note.body}}</textarea>
+            </div>
+            <div>
+                <button class="btn btn-outline-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>
+<div class="container">
+    <div style="display: flex;
+            justify-content: end;
+            margin-top: -38px;" id="delete">
+        <form action="/dashboard/{{note._id}}/delete?_method=delete" method="post" id="deleteForm">
+            <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</a>
+        </form>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Warning!</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure to delete this note?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">NO</button>
+                <button type="button" class="btn btn-danger" id="btnDeleteNote">DELETE</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const btndelete = document.getElementById('btnDeleteNote')
+    btndelete.onclick = function(){
+        document.forms['deleteForm'].submit()
+    }
+</script>

@@ -1,0 +1,16 @@
+<form action="/dashboard/{{user._id}}/save" method="post" class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 col-12 mx-auto">
+             <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Title</label>
+                <input type="text" class="form-control" name="title" id="formGroupExampleInput"
+                    placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Content</label>
+                <textarea class="form-control" name="body" id="formGroupExampleInput" style="height: 400px;" placeholder="Enter your note here..."></textarea>
+            </div>
+            <button class="btn btn-outline-primary">Create</button>
+        </div>
+    </div>
+</form>
